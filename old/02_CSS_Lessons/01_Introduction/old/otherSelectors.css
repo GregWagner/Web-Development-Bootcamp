@@ -1,0 +1,30 @@
+/* Star selector  - selectes everything on page */
+* {
+    border: 1px solid lightgrey;
+}
+
+/* Descendant Selectors - takes 2 or more selectors */
+li a {   /* all anchor tags in an li */
+    color: red;
+}
+
+/* Adjacent Selector */
+h4 + ul {  /* all uls after an h4 */
+    border: 4px solid red;
+}
+
+/* Attribute Selector */
+a[href="http://www.google.com"] { /* all hrefs to google */
+    background: blue;
+}
+
+input[type="checkbox"] {
+}
+
+/* nth of type */
+ul:nth-of-type(3) {  /* change 3rd ul */
+    background: purple;
+}
+
+li:nth-of-type(even) {  /* change ever other li */
+}

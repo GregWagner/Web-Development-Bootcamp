@@ -1,0 +1,22 @@
+h1 {
+    color: #FF8800;
+    border: 2px solid purple;   /* width style color */
+}
+
+li {
+    color: rgb(0, 0, 255);
+}
+
+h4 {
+    background: rgb(255, 100, 80);
+    color: rgba(25, 66, 3, .6);
+}
+
+body {
+    background: pink;
+    /*
+    background: url(http://images.all-free-download.com/images/graphiclarge/wood_grain_highdefinition_picture_2_169736.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+}
