@@ -134,6 +134,7 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* Start here */
 body {
   background-color: #60a9ff;
   display: flex;
@@ -231,11 +232,13 @@ body {
   .panel {
     flex-direction: row;
   }
+
   .pricing-plan {
     border-bottom: none;
     border-right: 1px solid #e1f1ff;
     padding: 25px 50px;
   }
+
   .pricing-plan:last-child {
     border-right: none;
   }

@@ -5,7 +5,7 @@ const Product = require('./models/product');
 const mongoose = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true })
+  .connect('mongodb://127.0.0.1/farmStand', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Mongo Connection Open!');
   })
@@ -56,6 +56,7 @@ const seedProducts = [
     category: 'vegetable',
   },
 ];
+
 Product.insertMany(seedProducts)
   .then((res) => {
     console.log(res);

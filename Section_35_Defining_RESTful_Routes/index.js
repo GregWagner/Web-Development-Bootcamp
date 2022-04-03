@@ -5,17 +5,21 @@ const path = require('path');
 const { v4: uuid } = require('uuid');
 const methodOverride = require('method-override');
 
+// decode post data in body
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
+// decode json post data in body
 app.use(express.json());
+// use method override to allow use of PATCH and DELETE
 app.use(methodOverride('_method'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// fake database
 let comments = [
   {
     username: 'Todd',
@@ -42,7 +46,9 @@ let comments = [
 // Delete a specific comment
 app.delete('/comments/:id', (req, res) => {
   const { id } = req.params;
+  // remove all matching commet ids
   comments = comments.filter((c) => c.id !== id);
+  // go display all comments
   res.redirect('/comments');
 });
 
@@ -51,41 +57,46 @@ app.patch('/comments/:id', (req, res) => {
   const { id } = req.params;
   const comment = comments.find((c) => c.id === id);
   comment.comment = req.body.comment;
+  // go display all comments
   res.redirect('/comments');
 });
 
 // create a new comment
 app.post('/comments', (req, res) => {
   const { username, comment } = req.body;
+  // update the database
   comments.push({ username, comment, id: uuid() });
   // go display all comments
   res.redirect('/comments');
 });
 
-// create a comment form
+// create a new comment form
 app.get('/comments/new', (req, res) => {
   res.render('comments/new');
 });
 
-// read comments
+// list all comments
 app.get('/comments', (req, res) => {
   res.render('comments/index', {
     comments,
   });
 });
 
-// get a specific comment
+// get a specific comment (using id)
 app.get('/comments/:id', (req, res) => {
   const { id } = req.params;
+  //console.log(`Looking for id ${id}`);
   const comment = comments.find((c) => c.id === id);
-  res.render('comments/show', { comment });
+  if (comment) {
+    res.render('comments/show', { comment });
+  }
 });
 
 app.get('/comments/new', (req, res) => {
   res.render('comments/new');
 });
 
-// Serve a form to modify a comment
+// Serve a form to modify a comment using method override
 app.get('/comments/:id/edit', (req, res) => {
   const { id } = req.params;
   const comment = comments.find((c) => c.id === id);

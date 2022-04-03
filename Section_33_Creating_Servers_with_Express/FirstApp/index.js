@@ -23,10 +23,10 @@ app.get('/r/:subreddit/:postid', (req, res) => {
 
 app.get('/search', (req, res) => {
   const { q } = req.query;
-  if (!q) {
-    res.send('Nothing found for nothing searched for');
+  if (q) {
+    res.send(`<h1>Search results for ${q}</h1>`);
   }
-  res.send(`<h1>Search results for ${q}</h1>`);
+  res.send('Nothing found for nothing searched for');
 })
 
 app.get('/cats', (req, res) => {
@@ -37,6 +37,7 @@ app.get('/dogs', (req, res) => {
   res.send('WOOF');
 })
 
+// Must be last get
 app.get('*', (req, res) => {
   res.send("I don't know that path");
 })

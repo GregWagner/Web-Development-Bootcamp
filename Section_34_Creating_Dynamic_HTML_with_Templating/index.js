@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
+// fake database
 const redditData = require('./data.json');
 
-app.use(express.static(path.join(__dirname, 'public'));
+// tell express where static assets are located
+app.use(express.static(path.join(__dirname, 'public')));
 
+// tell express to use ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
@@ -19,6 +23,7 @@ app.get('/cats', (req, res) => {
 
 app.get('/r/:subreddit', (req, res) => {
   const { subreddit } = req.params;
+  // get fake data from fact database
   const data = redditData[subreddit];
   if (data) {
     res.render('subreddit.ejs', { ...data });
@@ -30,7 +35,7 @@ app.get('/r/:subreddit', (req, res) => {
 app.get('/rand', (req, res) => {
   const num = Math.floor(Math.random() * 10) + 1;
   // note the object can also be just {num} and num
-  // we be available
+  // will be available
   res.render('random.ejs', { randomNumber: num });
 });
 

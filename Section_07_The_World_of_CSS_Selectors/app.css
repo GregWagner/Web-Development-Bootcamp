@@ -1,5 +1,5 @@
-* {
-  background-color: teal;
+body {
+  background-color: #f1faee;
 }
 
 button {
@@ -10,3 +10,4 @@ h1,
 h2 {
   color: darkslateblue;
 }
+

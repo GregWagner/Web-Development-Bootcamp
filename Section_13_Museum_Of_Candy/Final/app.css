@@ -23,7 +23,7 @@ body {
 
 #mainNavbar {
     font-size: 1.5rem;
-    font-weight: 100;    
+    font-weight: 100;
 }
 
 #mainNavbar .nav-link {
@@ -36,7 +36,6 @@ body {
 
 #mainNavbar .navbar-brand {
     color: #EA1C2C;
-    font-size: 1.5rem;
 }
 
 #headingGroup span {

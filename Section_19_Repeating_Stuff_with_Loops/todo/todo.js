@@ -1,7 +1,8 @@
 const todos = [];
 
 let command = prompt("Enter a command;");
-while (command !== "quit" && commad !== "q") {
+
+while (command !== "quit" && command !== "q") {
   if (command === "new") {
     const todo = prompt("Enter the todo");
     todos.push(todo);
@@ -25,4 +26,5 @@ while (command !== "quit" && commad !== "q") {
   }
   command = prompt("Enter a command;");
 }
+
 console.log("OK, You quit the application");
