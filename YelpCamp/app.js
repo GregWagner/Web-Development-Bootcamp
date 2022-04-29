@@ -60,8 +60,14 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// flash success middleware
+// set up locals middleware
 app.use((req, res, next) => {
+  if (!['/login', '/register', '/'].includes(req.originalUrl)) {
+    console.log(req.originalUrl);
+    req.session.returnTo = req.originalUrl;
+    console.log('Setting return to: ', req.session.returnTo);
+  }
+  res.locals.currentUser = req.user;
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();
