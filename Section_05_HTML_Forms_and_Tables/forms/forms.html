@@ -39,18 +39,22 @@
       <button>Search Reddit</button>
     </form>
     <form action="https://www.google.com/search">
-      <input type="text" name="q" id="query" />
+      <input type="text" name="q" id="query1" />
       <button>Search Google</button>
     </form>
     <form action="https://www.youtube.com/results">
-      <input type="text" name="search_query" id="query" />
+      <input type="text" name="search_query" id="query2" />
       <button>Search Youtube</button>
     </form>
 
     <h2>More Inputs</h2>
     <form action="">
+      <!-- Checkboxes -->
       <input type="checkbox" name="agree_tos" id="agree" />
       <label for="agree">I agree to everything</label>
+
+      <!-- Radio Buttons -->
+      <!-- name should be the same for grouping -->
       <p>
         <label for="xs">XS</label>
         <input type="radio" name="size" id="xs" value="xs" />
@@ -59,21 +63,40 @@
         <label for="m">M</label>
         <input type="radio" name="size" id="m" value="m" />
       </p>
+
+      <!-- Select dropdown/Options -->
       <p>
         <label for="meal">Please Select an Entree</label>
         <select name="meal" id="meal">
           <option value="steak">Steak</option>
-          <option value="chicken">Chicken</option>
+          <option value="chicken" selected>Chicken</option>
           <option value="fish">Fish</option>
         </select>
       </p>
+
+      <!-- Range (slider) -->
       <p>
         <label for="cheese">Amount of Cheese</label>
-        <input type="range" name="cheese" id="cheese" min="1" max="10" value="7"></range>
+        <input
+          type="range"
+          name="cheese_level"
+          id="cheese"
+          min="1"
+          max="10"
+          value="7"
+        />
       </p>
+
+      <!-- Textarea -->
       <p>
-        <label for="request">Any special requests?</label><br>
-        <textarea id="request" rows="5" cols="20" name="requests" placeholder="Type something here"></textarea>
+        <label for="request">Any special requests?</label><br />
+        <textarea
+          id="request"
+          rows="5"
+          cols="20"
+          name="requests"
+          placeholder="Type something here"
+        ></textarea>
       </p>
       <button>Submit</button>
     </form>
@@ -81,12 +104,19 @@
     <h2>Validation Demo</h2>
     <form action="/dummy">
       <p>
-      <label for="firstname">First Name:</label>
-      <input type="text" name="firstname" id="firstname" required>
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" required />
       </p>
       <p>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" minlength="5" maxlength="10" required>
+        <label for="username1">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username1"
+          minlength="5"
+          maxlength="10"
+          required
+        />
       </p>
 
       <button>Submit</button>

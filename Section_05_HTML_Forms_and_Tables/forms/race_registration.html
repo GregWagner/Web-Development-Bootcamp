@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Race Registration Form</title>
   </head>
+
   <body>
     <h1>Race Registration!</h1>
     <form action="">
       <div>
         <label for="first">First Name</label>
-        <input type="text" name="first" id="first" required>
+        <input type="text" name="first" id="first" required />
         <label for="last">Last Name</label>
-        <input type="text" name="last" id="last" required>
+        <input type="text" name="last" id="last" required />
       </div>
 
       <p>Select a Race:</p>
       <div>
-        <input type="radio" id="funrun" name="race" value="5k">
+        <input type="radio" id="funrun" name="race" value="5k" />
         <label for="funrun">Fun Run 5K</label>
       </div>
       <div>
-        <input type="radio" id="half" name="race" value="half_marathon">
+        <input type="radio" id="half" name="race" value="half_marathon" />
         <label for="half">Half Marathon</label>
       </div>
       <div>
-        <input type="radio" id="full" name="race" value="full_marathon">
+        <input type="radio" id="full" name="race" value="full_marathon" />
         <label for="full">Full Marathon</label>
       </div>
 
       <div>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" required />
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" required />
       </div>
 
       <div>
@@ -44,8 +45,9 @@
           <option value="adult">30-50</option>
           <option value="senior">Over 50</option>
         </select>
-        <br>
-        <button>Register!</button>
+      </div>
+      <br />
+      <button>Register!</button>
     </form>
   </body>
 </html>
