@@ -128,13 +128,13 @@ table {
   border-spacing: 0;
 }
 
+/* Start here */
 html {
   /* include border width in sizing */
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Start here */
 body {
   background-color: #60a9ff;
   display: flex;
