@@ -4,6 +4,7 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', () => {
   const newColor = randomColor();
   title.innerText = newColor;
+  // access body directly
   document.body.style.backgroundColor = newColor;
 });
 

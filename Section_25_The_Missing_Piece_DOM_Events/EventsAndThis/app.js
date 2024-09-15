@@ -1,21 +1,23 @@
 const makeRandColor = () => {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+};
 
+// add click listener to all buttons
 const buttons = document.querySelectorAll('button');
 for (let button of buttons) {
-    button.addEventListener('click', colorize)
+  button.addEventListener('click', colorize);
 }
 
+// add the same click listener to all h1s
 const h1s = document.querySelectorAll('h1');
 for (let h1 of h1s) {
-    h1.addEventListener('click', colorize)
+  h1.addEventListener('click', colorize);
 }
 
 function colorize() {
-    this.style.backgroundColor = makeRandColor();
-    this.style.color = makeRandColor();
+  this.style.backgroundColor = makeRandColor();
+  this.style.color = makeRandColor();
 }
