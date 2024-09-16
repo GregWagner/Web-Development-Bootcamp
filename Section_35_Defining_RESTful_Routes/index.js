@@ -61,7 +61,7 @@ app.patch('/comments/:id', (req, res) => {
   res.redirect('/comments');
 });
 
-// create a new comment
+// create a new comment (CREATE)
 app.post('/comments', (req, res) => {
   const { username, comment } = req.body;
   // update the database
@@ -70,12 +70,12 @@ app.post('/comments', (req, res) => {
   res.redirect('/comments');
 });
 
-// create a new comment form
+// create a new comment form (CREATE)
 app.get('/comments/new', (req, res) => {
   res.render('comments/new');
 });
 
-// list all comments
+// list all comments (READ)
 app.get('/comments', (req, res) => {
   res.render('comments/index', {
     comments,

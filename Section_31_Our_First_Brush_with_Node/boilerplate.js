@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 /*
+// not synchronous version
 fs.mkdir('dogs', { recursive: true }, (err) => {
   console.log('In the callback');
   if (err) throw err;

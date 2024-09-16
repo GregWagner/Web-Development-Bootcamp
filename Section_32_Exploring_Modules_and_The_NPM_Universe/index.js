@@ -6,9 +6,8 @@ const input = process.argv[2];
 
 const langCode = franc(input);
 if (langCode === 'und') {
-  console.log('Sorry, not enough text');
+  console.log('Sorry, not enough text'.red);
 } else {
-  const language = langs.where("3", langCode);
+  const language = langs.where('3', langCode);
   console.log(`My best guess is ${language.name}`.green);
 }
-
